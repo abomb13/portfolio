@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════
+     SEO & ATS META TAGS
+     Cross-referenced with Indeed / ATS top signals
+     for Project Manager, Property Ops, Autodidact
+═══════════════════════════════════════════ -->
+<title>Adam Bernal | Project Manager · Facilities & Property Operations · Applied AI</title>
+<meta name="description" content="Adam Bernal — Project Manager, Facilities Coordinator, and Applied AI Operator based in San Diego, CA. Specialized in property operations, vendor management, preventive maintenance, stakeholder communication, and AI-powered workflow automation.">
+<meta name="keywords" content="Project Manager, Property Manager, Facilities Coordinator, Facilities Management, Vendor Management, Preventive Maintenance, Stakeholder Management, Work Order Management, Budget Management, Property Operations, Portfolio Management, Property Inspections, Agile, Risk Management, Project Planning, Project Lifecycle, Client Relations, Scheduling, Estimating, Autodidact, Self-Taught, Applied AI, AI Workflow, Prompt Engineering, AI Agent, Business Automation, Operational Systems, San Diego, Escondido, Ready 2GO Handyman, Commercial Maintenance, Multi-Site Management">
+<meta name="author" content="Adam Bernal">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (for LinkedIn / social sharing) -->
+<meta property="og:title" content="Adam Bernal — Project Manager & Property Operations">
+<meta property="og:description" content="Self-directed operator with 10+ years of project execution, multi-site commercial maintenance contracts, and 5 deployed AI operational systems.">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+
+<!-- ═══════════════════════════════════════════
+     GOOGLE ANALYTICS 4 — GA4
+     Replace G-XXXXXXXXXX with your Measurement ID
+     from Google Analytics → Admin → Data Streams
+═══════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Main page tracking
+  gtag('config', 'G-XXXXXXXXXX', {
+    page_title: 'Adam Bernal Portfolio & Resume',
+    page_location: window.location.href,
+  });
+
+  // Track section views as custom events
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Track which sections users spend time on
+    const sections = [
+      { id: 'section-resume',    label: 'Resume View' },
+      { id: 'section-portfolio', label: 'Portfolio View' },
+      { id: 'section-learning',  label: 'Learning Section View' },
+    ];
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const label = entry.target.getAttribute('data-ga-label');
+          gtag('event', 'section_view', {
+            event_category: 'Portfolio Engagement',
+            event_label: label,
+            non_interaction: false
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(function(s) {
+      const el = document.getElementById(s.id);
+      if (el) {
+        el.setAttribute('data-ga-label', s.label);
+        observer.observe(el);
+      }
+    });
+
+    // Track case study clicks
+    document.querySelectorAll('.cs').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        const name = el.getAttribute('data-cs-name') || 'Unknown Case Study';
+        gtag('event', 'case_study_hover', {
+          event_category: 'Portfolio Engagement',
+          event_label: name
+        });
+      });
+    });
+
+    // Track time on page — fires at 30s, 60s, 120s
+    [30000, 60000, 120000].forEach(function(ms) {
+      setTimeout(function() {
+        gtag('event', 'time_on_page', {
+          event_category: 'Engagement Depth',
+          event_label: (ms / 1000) + ' seconds'
+        });
+      }, ms);
+    });
+
+  });
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Georgia', serif; background: #dde0e5; color: #1a1a1a; }
+
+.page { max-width: 920px; margin: 40px auto 70px; background: #fff; box-shadow: 0 8px 40px rgba(0,0,0,0.18); }
+
+/* ═══ BANNER ═══ */
+.identity-banner {
+  background: #0f2640;
+  padding: 44px 56px 36px;
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px;
+}
+.ib-name { font-size: 38px; font-weight: bold; color: #fff; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+.ib-credential { margin-top: 10px; font-size: 11.5px; font-family: Arial, sans-serif; color: #e05c3a; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; }
+.ib-tagline { margin-top: 8px; font-size: 13px; color: #8ab0cc; font-style: italic; line-height: 1.5; max-width: 540px; }
+.ib-right { text-align: right; font-size: 11.5px; font-family: Arial, sans-serif; color: #6a90b0; line-height: 2; }
+
+.accent-strip { height: 5px; background: linear-gradient(to right, #e05c3a 0%, #e05c3a 30%, #1a5a8c 30%, #1a5a8c 100%); }
+
+/* ═══ ATS KEYWORD RIBBON ═══ */
+.ats-ribbon {
+  background: #f7f9fc; border-bottom: 1px solid #dce4ee;
+  padding: 10px 56px;
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.ats-ribbon-label {
+  font-size: 8px; font-family: Arial, sans-serif; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 2px; color: #9ab0c8; margin-right: 6px;
+}
+.ats-tag {
+  font-size: 9px; font-family: Arial, sans-serif;
+  padding: 2px 9px; border-radius: 10px;
+  background: #e0eaf5; color: #1a3a5c; font-weight: bold;
+}
+.ats-tag.hot { background: #fce8e2; color: #b03010; }
+.ats-tag.green { background: #e2f5e8; color: #1a5a2a; }
+
+/* ═══ RESUME BODY ═══ */
+.resume-body { display: grid; grid-template-columns: 236px 1fr; }
+
+/* SIDEBAR */
+.sidebar { background: #f2f5f9; border-right: 1px solid #dce4ee; padding: 32px 22px 40px; }
+.s-section { margin-bottom: 26px; }
+.s-head { font-size: 8.5px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; color: #0f2640; border-bottom: 2px solid #0f2640; padding-bottom: 4px; margin-bottom: 12px; }
+.s-item { font-size: 11px; color: #3a3a3a; margin-bottom: 5px; line-height: 1.45; }
+.s-item b { color: #0f2640; }
+
+.sk { margin-bottom: 9px; }
+.sk-label { font-size: 10.5px; color: #2a3a4a; margin-bottom: 3px; display: flex; justify-content: space-between; }
+.sk-label span { color: #e05c3a; font-size: 9px; }
+.sk-track { height: 3px; background: #d0dae8; border-radius: 2px; }
+.sk-fill { height: 3px; border-radius: 2px; background: linear-gradient(to right, #1a5a8c, #3a8abf); }
+
+.tag-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { font-size: 9px; font-family: Arial, sans-serif; padding: 3px 9px; border-radius: 12px; background: #e0eaf5; color: #0f2640; font-weight: bold; }
+.tag.red { background: #fce8e2; color: #b03010; }
+.tag.green { background: #e2f5e8; color: #1a5a2a; }
+
+/* MAIN COL */
+.main-col { padding: 36px 44px 40px 36px; }
+.m-section { margin-bottom: 24px; }
+.m-head { font-size: 8.5px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; color: #0f2640; border-bottom: 2px solid #0f2640; padding-bottom: 4px; margin-bottom: 14px; }
+
+.summary-box { background: #f7f9fc; border-left: 4px solid #e05c3a; padding: 14px 18px; font-size: 12.5px; line-height: 1.78; color: #2a2a2a; }
+
+.vp-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+.vp { text-align: center; padding: 10px 8px; background: #0f2640; color: #fff; }
+.vp-num { font-size: 22px; font-weight: bold; color: #e05c3a; line-height: 1; }
+.vp-label { font-size: 9px; font-family: Arial, sans-serif; color: #8ab0cc; margin-top: 3px; text-transform: uppercase; letter-spacing: 1px; }
+
+.job { margin-bottom: 20px; }
+.job-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.job-title { font-size: 13px; font-weight: bold; color: #0f2640; font-family: Arial, sans-serif; }
+.job-org { font-size: 11.5px; font-style: italic; color: #557; margin-top: 2px; }
+.job-right { text-align: right; }
+.job-date { font-size: 10.5px; color: #e05c3a; font-family: Arial, sans-serif; font-weight: bold; }
+.job-loc { font-size: 10px; color: #aaa; }
+.job ul { margin-top: 8px; padding-left: 16px; }
+.job li { font-size: 11.5px; line-height: 1.68; color: #333; margin-bottom: 3px; }
+.job li strong { color: #0f2640; }
+.job + .job { border-top: 1px solid #e8edf4; padding-top: 16px; }
+
+.edu { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 9px; }
+.edu-title { font-size: 12px; font-weight: bold; color: #0f2640; }
+.edu-sub { font-size: 11px; color: #555; margin-top: 2px; }
+.edu-date { font-size: 10.5px; color: #e05c3a; font-family: Arial, sans-serif; font-weight: bold; white-space: nowrap; }
+
+/* ═══ PORTFOLIO ═══ */
+.pf-divider { background: #0f2640; padding: 30px 56px; display: flex; align-items: center; justify-content: space-between; }
+.pf-divider h2 { font-size: 22px; color: #fff; text-transform: uppercase; letter-spacing: 4px; font-weight: bold; }
+.pf-divider .pf-sub { font-size: 11px; font-family: Arial, sans-serif; color: #e05c3a; text-transform: uppercase; letter-spacing: 2px; }
+.pf-divider .pf-tag { font-size: 10px; font-family: Arial, sans-serif; background: #e05c3a; color: #fff; padding: 6px 18px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+.pf-intro-block { padding: 28px 56px 0; }
+.pf-statement { font-size: 15px; color: #0f2640; line-height: 1.7; font-style: italic; border-left: 4px solid #e05c3a; padding-left: 18px; }
+
+.pf-method { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0; border: 1px solid #dce4ee; }
+.pf-method-step { padding: 14px 16px; border-right: 1px solid #dce4ee; text-align: center; }
+.pf-method-step:last-child { border-right: none; }
+.step-num { font-size: 22px; font-weight: bold; color: #e05c3a; font-family: Arial, sans-serif; }
+.step-label { font-size: 9.5px; font-family: Arial, sans-serif; color: #0f2640; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: bold; }
+.step-desc { font-size: 10px; color: #667; margin-top: 4px; line-height: 1.45; }
+
+.pf-cases { padding: 32px 56px 50px; }
+
+.cs { margin-bottom: 28px; border: 1px solid #dce4ee; overflow: hidden; }
+.cs-bar { background: #0f2640; padding: 12px 22px; display: flex; align-items: center; justify-content: space-between; }
+.cs-bar-left { display: flex; align-items: center; gap: 14px; }
+.cs-index { font-size: 11px; font-family: Arial, sans-serif; font-weight: bold; color: #e05c3a; text-transform: uppercase; letter-spacing: 2px; }
+.cs-name { font-size: 14px; font-weight: bold; color: #fff; }
+.cs-bar-right { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.cs-skill-tag { font-size: 8.5px; font-family: Arial, sans-serif; background: transparent; border: 1px solid #3a6a9c; color: #8ab0cc; padding: 2px 8px; text-transform: uppercase; letter-spacing: 1px; }
+.cs-skill-tag.hot { background: #e05c3a; border-color: #e05c3a; color: #fff; }
+
+.cs-body { padding: 18px 22px 20px; }
+.cs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.cs-col label { font-size: 8.5px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #e05c3a; display: block; margin-bottom: 5px; }
+.cs-col p { font-size: 11.5px; color: #333; line-height: 1.65; }
+
+.cs-result-bar { background: #f2f5f9; border-top: 1px solid #dce4ee; padding: 10px 22px; display: flex; align-items: center; gap: 10px; }
+.rb-label { font-size: 8.5px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #0f2640; white-space: nowrap; }
+.rb-text { font-size: 11px; color: #2a4a6a; font-style: italic; }
+
+/* ═══ LEARNING ═══ */
+.learning-section { background: #f2f5f9; border-top: 1px solid #dce4ee; padding: 36px 56px; }
+.ls-head { font-size: 9px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; color: #0f2640; border-bottom: 2px solid #0f2640; padding-bottom: 4px; margin-bottom: 22px; }
+.ls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ls-card { background: #fff; border: 1px solid #dce4ee; padding: 18px 20px; }
+.ls-card h4 { font-size: 12px; color: #0f2640; font-weight: bold; margin-bottom: 6px; font-family: Arial, sans-serif; }
+.ls-card p { font-size: 11.5px; color: #444; line-height: 1.65; }
+.ls-tag { display: inline-block; margin-top: 10px; font-size: 8.5px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; background: #e05c3a; color: #fff; padding: 2px 8px; }
+
+/* ═══ GA ANALYTICS NOTE ═══ */
+.analytics-note {
+  background: #fffbf0; border: 1px dashed #e0c050; padding: 12px 56px;
+  font-size: 10.5px; font-family: Arial, sans-serif; color: #7a6010;
+}
+.analytics-note strong { color: #5a4000; }
+
+/* ═══ FOOTER ═══ */
+.footer-strip { background: #0f2640; padding: 16px 56px; display: flex; justify-content: space-between; align-items: center; }
+.footer-strip span { font-size: 10px; font-family: Arial, sans-serif; color: #4a7a9c; letter-spacing: 1px; }
+.footer-strip .footer-name { color: #e05c3a; font-weight: bold; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- BANNER -->
+  <div class="identity-banner" id="section-resume">
+    <div>
+      <div class="ib-name">Adam Bernal</div>
+      <div class="ib-credential">Project Manager · Facilities & Property Operations · Applied AI Operator</div>
+      <div class="ib-tagline">"Identifies a gap, builds the solution, and runs it in production — without waiting for permission or a classroom."</div>
+    </div>
+    <div class="ib-right">
+      Escondido / San Diego, CA<br>
+      (720) 365-5276<br>
+      adam.bernal361@gmail.com
+    </div>
+  </div>
+  <div class="accent-strip"></div>
+
+  <!-- ATS KEYWORD RIBBON -->
+  <div class="ats-ribbon">
+    <span class="ats-ribbon-label">ATS Tags →</span>
+    <span class="ats-tag hot">Project Management</span>
+    <span class="ats-tag hot">Stakeholder Management</span>
+    <span class="ats-tag hot">Budget Management</span>
+    <span class="ats-tag hot">Vendor Management</span>
+    <span class="ats-tag hot">Preventive Maintenance</span>
+    <span class="ats-tag hot">Property Operations</span>
+    <span class="ats-tag">Portfolio Management</span>
+    <span class="ats-tag">Work Order Management</span>
+    <span class="ats-tag">Risk Management</span>
+    <span class="ats-tag">Project Lifecycle</span>
+    <span class="ats-tag">Facilities Coordination</span>
+    <span class="ats-tag green">Applied AI</span>
+    <span class="ats-tag green">Workflow Automation</span>
+    <span class="ats-tag green">Autodidact</span>
+  </div>
+
+  <!-- RESUME BODY -->
+  <div class="resume-body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="s-section">
+        <div class="s-head">Core Capabilities</div>
+        <div class="sk">
+          <div class="sk-label">Project Coordination <span>Expert</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:94%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">Stakeholder Management <span>Expert</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:91%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">Facilities & Property Ops <span>Expert</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:93%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">Vendor Management <span>Expert</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:89%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">AI Workflow Design <span>Advanced</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:86%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">Budget & Cost Management <span>Advanced</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:80%"></div></div>
+        </div>
+        <div class="sk">
+          <div class="sk-label">Risk Management <span>Advanced</span></div>
+          <div class="sk-track"><div class="sk-fill" style="width:78%"></div></div>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-head">Tools & Platforms</div>
+        <div class="tag-wrap">
+          <span class="tag">Claude AI</span>
+          <span class="tag">QuickBooks Online</span>
+          <span class="tag">Markate</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">AI Agent Design</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Dispatch Systems</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-head">Property & Facilities</div>
+        <div class="tag-wrap">
+          <span class="tag red">Preventive Maintenance</span>
+          <span class="tag red">Work Order Mgmt</span>
+          <span class="tag red">Property Inspections</span>
+          <span class="tag red">Vendor Coordination</span>
+          <span class="tag red">Multi-Site Operations</span>
+          <span class="tag red">Commercial Contracts</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-head">Trade Skills</div>
+        <div class="tag-wrap">
+          <span class="tag">Tile & Grout</span>
+          <span class="tag">Plumbing</span>
+          <span class="tag">Smart Home / HVAC</span>
+          <span class="tag">Irrigation</span>
+          <span class="tag">Stucco</span>
+          <span class="tag">Fabrication</span>
+          <span class="tag">Doors & Windows</span>
+        </div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-head">Autodidact Profile</div>
+        <div class="s-item"><b>Method:</b> Acquire on demand, apply immediately to live environment</div>
+        <div class="s-item"><b>Evidence:</b> 5 operational AI systems built without formal instruction</div>
+        <div class="s-item"><b>Domain:</b> Trades, property ops, business automation</div>
+        <div class="s-item"><b>Verified by:</b> Working systems in production — not certificates</div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-head">Target Roles</div>
+        <div class="s-item">→ Project Manager</div>
+        <div class="s-item">→ Property Operations Manager</div>
+        <div class="s-item">→ Facilities Coordinator</div>
+        <div class="s-item">→ Applied AI / Ops Specialist</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <div class="m-section">
+        <div class="m-head">Professional Summary</div>
+        <div class="summary-box">
+          Ten years of uninterrupted project execution across property operations, commercial facilities management, and multi-client stakeholder coordination — built entirely through self-directed learning and live application. Manages the full project lifecycle from scoping and estimating through vendor management, risk response, and close-out documentation, without oversight or support staff. Independently built and deployed five AI-powered operational systems — including a business dispatch agent, finance intelligence layer, and production scheduling app — applying each one directly to a live operating environment. Holds active commercial maintenance contracts as the single accountable party for a multi-site behavioral health organization. The proof is the portfolio.
+        </div>
+        <div class="vp-row">
+          <div class="vp">
+            <div class="vp-num">5</div>
+            <div class="vp-label">AI Systems Built & Deployed</div>
+          </div>
+          <div class="vp">
+            <div class="vp-num">10+</div>
+            <div class="vp-label">Yrs Project Lifecycle Execution</div>
+          </div>
+          <div class="vp">
+            <div class="vp-num">2</div>
+            <div class="vp-label">Active Commercial Contracts</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-section">
+        <div class="m-head">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Owner & Lead Technician — Project Manager</div>
+              <div class="job-org">Ready 2GO Handyman LLC</div>
+            </div>
+            <div class="job-right">
+              <div class="job-date">2023 – Present</div>
+              <div class="job-loc">San Diego County, CA</div>
+            </div>
+          </div>
+          <ul>
+            <li>Manages the full <strong>project lifecycle</strong> across concurrent residential and commercial engagements — scoping, estimating, scheduling, vendor coordination, execution, and closeout documentation — as sole project manager and technician.</li>
+            <li>Holds active <strong>multi-site facilities management</strong> contract with Good Therapy (Oceanside & Encinitas) — serving as single-point <strong>stakeholder contact</strong> responsible for <strong>preventive maintenance scheduling</strong>, <strong>work order management</strong>, emergency response, and site condition reporting.</li>
+            <li>Built and deployed <strong>SCOUT</strong>, a custom AI dispatch and project coordination agent — replacing ad-hoc tracking with a structured, session-aware workflow engine that manages open items, surfaces priorities, and drives tasks to measurable close.</li>
+            <li>Manages client-facing <strong>budget management</strong> and cost estimation across all projects; maintains service rate structure ($35–$85/hr) with <strong>QuickBooks Online</strong> and Markate for invoicing and job tracking.</li>
+            <li>Independently designed <strong>Tracker</strong>, a finance intelligence agent, to manage accounting records, flag outstanding items, and maintain audit-ready financial documentation — functioning as a self-built CFO layer for the business.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Kitchen Manager & Staff</div>
+              <div class="job-org">Toast Catering</div>
+            </div>
+            <div class="job-right">
+              <div class="job-date">2013 – Present</div>
+              <div class="job-loc">San Diego, CA</div>
+            </div>
+          </div>
+          <ul>
+            <li>Identified a systemic operational gap in kitchen <strong>production scheduling</strong> and independently built a functional <strong>AI-powered prep planning app</strong> — unsolicited and unassigned — then pitched it to ownership as a production solution ahead of a facility expansion to 9,562 sq ft.</li>
+            <li>Coordinates kitchen production flow, staff <strong>scheduling</strong>, and event logistics for high-volume catering operations across private, corporate, and large-scale events.</li>
+            <li>13 years of cumulative food service experience spanning K-12 program management (5 yrs), café operations management (5 yrs), and high-profile event execution including the LPGA Tour Championship at Walt Disney Resort.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Founder & Personal Trainer</div>
+              <div class="job-org">Attributes Training</div>
+            </div>
+            <div class="job-right">
+              <div class="job-date">2012 – 2013</div>
+              <div class="job-loc">Escondido, CA</div>
+            </div>
+          </div>
+          <ul>
+            <li>Conceived, structured, and operated an independent training business — built client programs, administered assessments, and managed all operations without organizational infrastructure or external support.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Retail Sales Associate</div>
+              <div class="job-org">Cricket Communications</div>
+            </div>
+            <div class="job-right">
+              <div class="job-date">2008 – 2011</div>
+              <div class="job-loc">Denver / Wheat Ridge, CO</div>
+            </div>
+          </div>
+          <ul>
+            <li>Consistently top sales performer through relationship-driven <strong>client management</strong> and service delivery in a high-volume retail environment.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="m-section">
+        <div class="m-head">Education & Credentials</div>
+        <div class="edu">
+          <div>
+            <div class="edu-title">Le Cordon Bleu</div>
+            <div class="edu-sub">AA in Applied Science — Culinary Arts</div>
+          </div>
+          <div class="edu-date">Feb 2008</div>
+        </div>
+        <div class="edu">
+          <div>
+            <div class="edu-title">CrossFit Level 1 Certified</div>
+            <div class="edu-sub">CrossFit Training — Strength & Conditioning Instruction</div>
+          </div>
+          <div class="edu-date">Nov 2011</div>
+        </div>
+        <div class="edu">
+          <div>
+            <div class="edu-title">Applied AI & Agent Systems — Self-Directed Study</div>
+            <div class="edu-sub">Prompt Engineering · Autonomous Agent Architecture · Business Automation · 2024–Present</div>
+          </div>
+          <div class="edu-date">Ongoing</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PORTFOLIO HEADER -->
+  <div class="pf-divider" id="section-portfolio">
+    <div>
+      <div class="pf-sub">Adam Bernal</div>
+      <h2>Professional Portfolio</h2>
+    </div>
+    <div class="pf-tag">Proof of Work · Autodidact · Applied Only</div>
+  </div>
+
+  <!-- GA NOTE FOR ADAM -->
+  <div class="analytics-note">
+    <strong>📊 Google Analytics is active on this page.</strong> Replace <code>G-XXXXXXXXXX</code> in the page header with your GA4 Measurement ID (Google Analytics → Admin → Data Streams → your stream → Measurement ID). Currently tracking: section views, case study engagement, and time-on-page at 30s / 60s / 120s intervals.
+  </div>
+
+  <!-- PORTFOLIO INTRO -->
+  <div class="pf-intro-block">
+    <div style="padding: 28px 0 22px;">
+      <p class="pf-statement">
+        Every project below was self-initiated, self-researched, and deployed into a real operating environment. None were assigned. None were academic. The measure of each one is whether it still runs — and most of them do.
+      </p>
+    </div>
+    <div class="pf-method">
+      <div class="pf-method-step">
+        <div class="step-num">01</div>
+        <div class="step-label">Identify the Gap</div>
+        <div class="step-desc">A real problem surfaces in a live operation. No existing tool or process adequately addresses it.</div>
+      </div>
+      <div class="pf-method-step">
+        <div class="step-num">02</div>
+        <div class="step-label">Acquire on Demand</div>
+        <div class="step-desc">Research exactly what's needed in real time — context-specific, no lag, no coursework required.</div>
+      </div>
+      <div class="pf-method-step">
+        <div class="step-num">03</div>
+        <div class="step-label">Build the Solution</div>
+        <div class="step-desc">Design and construct the response — tool, system, framework, or workflow — from scratch.</div>
+      </div>
+      <div class="pf-method-step" style="border-right:none;">
+        <div class="step-num">04</div>
+        <div class="step-label">Deploy & Iterate</div>
+        <div class="step-desc">Ship it into the live environment. Measure against real outcomes, not simulated scenarios.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <div class="pf-cases">
+
+    <div class="cs" data-cs-name="SCOUT Dispatch Agent">
+      <div class="cs-bar">
+        <div class="cs-bar-left">
+          <div class="cs-index">Case 01</div>
+          <div class="cs-name">SCOUT — Autonomous Business Dispatch & Project Coordination Agent</div>
+        </div>
+        <div class="cs-bar-right">
+          <span class="cs-skill-tag hot">Project Management</span>
+          <span class="cs-skill-tag hot">Stakeholder Coordination</span>
+          <span class="cs-skill-tag">Live System</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-grid">
+          <div class="cs-col">
+            <label>The Gap</label>
+            <p>Running a solo multi-client operation means project coordination, client follow-up, work order routing, and follow-through all compete for the same bandwidth as the actual trade work. Nothing stays tracked without a system.</p>
+          </div>
+          <div class="cs-col">
+            <label>The Build</label>
+            <p>Independently designed SCOUT — a persistent AI dispatch agent with cross-session memory, capable of multi-step project lifecycle execution, client routing, open-item tracking, and proactive priority surfacing. No template. No tutorial.</p>
+          </div>
+          <div class="cs-col">
+            <label>In Production</label>
+            <p>Active daily inside Ready 2GO Handyman LLC. Manages concurrent project status, surfaces at-risk items, and drives work orders through to documented close — functioning as a full project coordination layer for a solo operator.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-result-bar">
+        <div class="rb-label">What This Demonstrates →</div>
+        <div class="rb-text">Project lifecycle management, stakeholder coordination, and risk tracking — all self-architected and running in a live commercial environment without external support.</div>
+      </div>
+    </div>
+
+    <div class="cs" data-cs-name="Tracker Finance Agent">
+      <div class="cs-bar">
+        <div class="cs-bar-left">
+          <div class="cs-index">Case 02</div>
+          <div class="cs-name">Tracker — Business Finance Intelligence & Budget Management Agent</div>
+        </div>
+        <div class="cs-bar-right">
+          <span class="cs-skill-tag hot">Budget Management</span>
+          <span class="cs-skill-tag hot">Financial Operations</span>
+          <span class="cs-skill-tag">Live System</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-grid">
+          <div class="cs-col">
+            <label>The Gap</label>
+            <p>Managing QuickBooks, IRS correspondence, back-tax resolution, expense categorization, and business invoicing simultaneously — without an accountant — while running active concurrent projects and maintaining client relationships.</p>
+          </div>
+          <div class="cs-col">
+            <label>The Build</label>
+            <p>Designed Tracker with defined scope boundaries, financial intelligence tasks, guardrails against overreach, and structured workflows for document collection, deadline flagging, and account reconciliation. Fully self-architected.</p>
+          </div>
+          <div class="cs-col">
+            <label>In Production</label>
+            <p>Active financial intelligence layer for Ready 2GO Handyman LLC. Maintains audit-ready records, surfaces outstanding filings, and holds the complete financial picture of the business between sessions — integrated with QuickBooks Online.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-result-bar">
+        <div class="rb-label">What This Demonstrates →</div>
+        <div class="rb-text">Budget management, financial reporting, and systems design with defined scope and guardrails — built and operated without outside financial consulting.</div>
+      </div>
+    </div>
+
+    <div class="cs" data-cs-name="PRISM Decision Framework">
+      <div class="cs-bar">
+        <div class="cs-bar-left">
+          <div class="cs-index">Case 03</div>
+          <div class="cs-name">PRISM — 7-Layer Strategic Decision & Risk Management Framework</div>
+        </div>
+        <div class="cs-bar-right">
+          <span class="cs-skill-tag hot">Risk Management</span>
+          <span class="cs-skill-tag hot">Strategic Planning</span>
+          <span class="cs-skill-tag">Framework Built</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-grid">
+          <div class="cs-col">
+            <label>The Gap</label>
+            <p>High-stakes decisions — career pivots, client negotiations, business structure changes — were being made reactively. No structured method to stress-test assumptions, surface hidden constraints, or produce a documented reasoning trail.</p>
+          </div>
+          <div class="cs-col">
+            <label>The Build</label>
+            <p>Built PRISM: a 7-layer cognitive reasoning framework (Assume, Delete, Distort, Superposition, Conceptualize, Skin in the Game, Red Team) with a Critic Layer backward pass, ICL anchors, and confidence scoring. Self-designed from scratch.</p>
+          </div>
+          <div class="cs-col">
+            <label>In Production</label>
+            <p>Applied to a 3–5 year career direction analysis — produced a structured intelligence brief identifying the strategic path, surfacing three hidden constraints, and documenting the full reasoning trail in Google Drive as a deliverable.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-result-bar">
+        <div class="rb-label">What This Demonstrates →</div>
+        <div class="rb-text">Risk identification, constraint analysis, and structured decision-making at the architecture level — the same thinking pattern a senior project manager applies before committing resources to a project plan.</div>
+      </div>
+    </div>
+
+    <div class="cs" data-cs-name="Toast Prep Planner">
+      <div class="cs-bar">
+        <div class="cs-bar-left">
+          <div class="cs-index">Case 04</div>
+          <div class="cs-name">Toast Prep Planner — AI-Powered Kitchen Production Scheduling System</div>
+        </div>
+        <div class="cs-bar-right">
+          <span class="cs-skill-tag hot">Scheduling</span>
+          <span class="cs-skill-tag hot">Initiative & Product Design</span>
+          <span class="cs-skill-tag">Pitch Delivered</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-grid">
+          <div class="cs-col">
+            <label>The Gap</label>
+            <p>Toast Catering's crew had no centralized production scheduling system ahead of a major facility expansion to 9,562 sq ft on Miramar Rd. Coordination was verbal, tasks went undocumented, and the operation was scaling without infrastructure.</p>
+          </div>
+          <div class="cs-col">
+            <label>The Build</label>
+            <p>Without being assigned, designed and built a functional AI-powered prep scheduling app mockup — with crew scheduling views, ingredient scaling, and daily task assignments. Self-directed from identification of need through working prototype.</p>
+          </div>
+          <div class="cs-col">
+            <label>In Production</label>
+            <p>Delivered as an unsolicited pitch to ownership (Chef Sam). Demonstrates the full sequence: identify operational risk → research solution → build working prototype → present to stakeholders — with zero directive from management.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-result-bar">
+        <div class="rb-label">What This Demonstrates →</div>
+        <div class="rb-text">Proactive project initiation, scheduling system design, and stakeholder presentation — the exact pattern of a project manager who identifies scope before being asked to manage it.</div>
+      </div>
+    </div>
+
+    <div class="cs" data-cs-name="Good Therapy Facilities Management">
+      <div class="cs-bar">
+        <div class="cs-bar-left">
+          <div class="cs-index">Case 05</div>
+          <div class="cs-name">Good Therapy — Multi-Site Commercial Facilities Management Contract</div>
+        </div>
+        <div class="cs-bar-right">
+          <span class="cs-skill-tag hot">Property Management</span>
+          <span class="cs-skill-tag hot">Vendor & Client Ops</span>
+          <span class="cs-skill-tag">Active Contract</span>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-grid">
+          <div class="cs-col">
+            <label>The Gap</label>
+            <p>A licensed behavioral health company operating two commercial office locations needed a reliable single-point facilities contact for both scheduled preventive maintenance and emergency response — without the cost of an in-house team.</p>
+          </div>
+          <div class="cs-col">
+            <label>The Build</label>
+            <p>Established and maintain an ongoing commercial contract covering preventive maintenance scheduling, reactive work order response, vendor coordination, and documented service history across both the Oceanside and Encinitas locations.</p>
+          </div>
+          <div class="cs-col">
+            <label>In Production</label>
+            <p>Active multi-year engagement. Sole facilities contact for a professional health services company — independently managing property inspections, maintenance schedules, vendor relationships, and client-facing communication across two sites.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-result-bar">
+        <div class="rb-label">What This Demonstrates →</div>
+        <div class="rb-text">Commercial property operations, preventive maintenance management, multi-site vendor coordination, and stakeholder trust — the core competency set of a facilities coordinator or property operations manager.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LEARNING SECTION -->
+  <div class="learning-section" id="section-learning">
+    <div class="ls-head">Continuous Development — The Autodidact Learning Loop</div>
+    <div class="ls-grid">
+      <div class="ls-card">
+        <h4>Real-Time Information Acquisition & Application</h4>
+        <p>Learns in motion — when a live project surfaces a knowledge gap, researches exactly what is needed and applies it immediately to that environment. No lag between learning and deployment. Every working system in this portfolio was built this way.</p>
+        <span class="ls-tag">Core Method</span>
+      </div>
+      <div class="ls-card">
+        <h4>Applied AI & Agent Architecture</h4>
+        <p>Self-taught through direct application — designed and deployed five operational AI systems (SCOUT, PRISM, Tracker, Toast Prep Planner, SiteScan AI) without formal instruction. Each runs against real data in a live business context. Verified by output, not coursework.</p>
+        <span class="ls-tag">Verified by Output</span>
+      </div>
+      <div class="ls-card">
+        <h4>Business Systems & Operational Design</h4>
+        <p>Self-designed SOPs, dispatch workflows, financial tracking systems, and client management pipelines across multiple concurrent businesses — without consultants, templates, or training programs. The systems run. That's the evidence.</p>
+        <span class="ls-tag">Active in Production</span>
+      </div>
+      <div class="ls-card">
+        <h4>Property & Facilities Management</h4>
+        <p>Hands-on execution across residential and commercial environments — preventive maintenance scheduling, multi-site contract management, work order documentation, property inspections, and vendor coordination. All self-managed and client-facing.</p>
+        <span class="ls-tag">Commercial Contract Held</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-strip">
+    <span class="footer-name">ADAM BERNAL</span>
+    <span>Portfolio & Resume · 2026 · GA4 Enabled</span>
+    <span>adam.bernal361@gmail.com · (720) 365-5276</span>
+  </div>
+
+</div>
+</body>
+</html>
